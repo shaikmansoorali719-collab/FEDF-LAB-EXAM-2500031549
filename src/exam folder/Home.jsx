@@ -2,8 +2,8 @@ import React from 'react'
 
 export default function Home() {
   return (
-    <div>
-      <h2>Wlecome To Deparment Registration</h2>
+    <div className="home-container">
+      <h2>Welcome To Department Registration</h2>
     </div>
   )
 }

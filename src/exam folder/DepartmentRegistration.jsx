@@ -1,4 +1,5 @@
-﻿import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import './registration.css'
 
 function DepartmentRegistration() {
   const [formData, setFormData] = useState({
@@ -40,40 +41,53 @@ function DepartmentRegistration() {
   };
 
   return (
-    <div>
+    <div className="form-container">
       <h2>Department Registration Form</h2>
 
       <form onSubmit={handleSubmit}>
-        <label>Name:</label><br />
-        <input type="text" name="name" value={formData.name} onChange={handleChange} /><br /><br />
+        <div className="form-group">
+          <label>Name:</label>
+          <input type="text" name="name" value={formData.name} onChange={handleChange} />
+        </div>
 
-        <label>Email:</label><br />
-        <input type="email" name="email" value={formData.email} onChange={handleChange} /><br /><br />
+        <div className="form-group">
+          <label>Email:</label>
+          <input type="email" name="email" value={formData.email} onChange={handleChange} />
+        </div>
 
-        <label>Department:</label><br />
-        <select name="department" value={formData.department} onChange={handleChange}>
-          <option value="">Select Department</option>
-          <option value="CSE">CSE</option>
-          <option value="ECE">ECE</option>
-          <option value="EEE">EEE</option>
-          <option value="MECH">MECH</option>
-        </select><br /><br />
+        <div className="form-group">
+          <label>Department:</label>
+          <select name="department" value={formData.department} onChange={handleChange}>
+            <option value="">Select Department</option>
+            <option value="CSE">CSE</option>
+            <option value="ECE">ECE</option>
+            <option value="EEE">EEE</option>
+            <option value="MECH">MECH</option>
+          </select>
+        </div>
 
-        <label>Gender:</label><br />
-        <input type="radio" name="gender" value="Male" onChange={handleChange} /> Male
-        <input type="radio" name="gender" value="Female" onChange={handleChange} /> Female
-        <br /><br />
+        <div className="form-group">
+          <label>Gender:</label>
+          <select name="gender" value={formData.gender} onChange={handleChange}>
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
 
-        <label>Year:</label><br />
-        <select name="year" value={formData.year} onChange={handleChange}>
-          <option value="">Select Year</option>
-          <option value="1">1st Year</option>
-          <option value="2">2nd Year</option>
-          <option value="3">3rd Year</option>
-          <option value="4">4th Year</option>
-        </select><br /><br />
+        <div className="form-group">
+          <label>Year:</label>
+          <select name="year" value={formData.year} onChange={handleChange}>
+            <option value="">Select Year</option>
+            <option value="1">1st Year</option>
+            <option value="2">2nd Year</option>
+            <option value="3">3rd Year</option>
+            <option value="4">4th Year</option>
+          </select>
+        </div>
 
-        <button type="submit">Register</button>
+        <button type="submit" className="form-btn">Register</button>
       </form>
     </div>
   );
